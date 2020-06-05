@@ -1,0 +1,181 @@
+.Login {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+.LoginForm {
+  --h1-color: rgb(230, 230, 230);
+  --h1-color-transitioned: white;
+
+  --bg-color: rgb(37, 37, 37);
+  --bg-color-transitioned: rgb(41, 41, 41);
+
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease;
+  padding: 15px;
+}
+
+.LoginForm:focus-within {
+  padding: 15px;
+  transform: scale(110%);
+  box-shadow: 0px 0px 15px black;
+  background-color: var(--bg-color-transitioned);
+}
+
+.LoginForm > h1 {
+  font-weight: 500;
+  color: var(--h1-color);
+  transition: all 0.5s ease;
+  top: -20px;
+  position: relative;
+  min-height: 50px;
+}
+
+.LoginForm:focus-within > h1,
+h1:active {
+  color: var(--h1-color-transitioned);
+  margin-left: 190px;
+  top: 0px;
+  min-height: 75px;
+}
+
+.LoginForm > input,
+.LoginForm > button {
+  --bg-color: rgb(0, 153, 255);
+  --bg-second-color: rgb(78, 190, 255);
+  --bg-invalid-color: red;
+  --bg-valid-color: green;
+  --bg-color-gradient: linear-gradient(
+    to bottom right,
+    var(--bg-color),
+    var(--bg-second-color),
+    var(--bg-color)
+  );
+  --main-color: rgba(255, 255, 255, 0.8-);
+
+  margin: 5px;
+  background: var(--bg-color-gradient);
+  border: none;
+  box-shadow: 0px 0px 5px var(--bg-color);
+  border-radius: 7.5px;
+  padding: 5px;
+  transition: all 0.2s cubic-bezier(0.01, 0.84, 0.74, 1.01);
+  background-position: top left;
+  background-size: 330px 150px;
+  font-size: 20px;
+  color: var(--main-color);
+}
+
+.LoginForm > input:hover,
+.LoginForm > input:focus,
+.LoginForm > button:hover,
+.LoginForm > button:focus {
+  background-position: left;
+  box-shadow: 0px 0px 10px var(--bg-second-color);
+  transform: scale(105%);
+}
+
+.LoginForm > input:hover,
+.LoginForm > button:hover {
+  transform: scale(110%) rotate(-2deg);
+  filter: brightness(110%);
+}
+
+.LoginForm > input:active,
+.LoginForm > button:active {
+  transform: scale(115%) rotate(-4deg);
+  filter: brightness(150%);
+  color: rgba(0, 0, 0, 0.733);
+  box-shadow: 0px 0px 10px black;
+}
+/* 
+.LoginForm > input:invalid {
+  --bg-color: red;
+  --bg-second-color: rgb(223, 33, 0);
+} */
+
+/* Strength */
+
+.LoginForm > .passwordValidation > .strength {
+  display: flex;
+  height: 20px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.LoginForm > .passwordValidation > .strength > .bar {
+  margin-right: 5px;
+  height: 100%;
+  width: 25%;
+  transition: all 0.2s cubic-bezier(0.01, 0.84, 0.74, 1.01);
+  box-shadow: inset 0px 20px #1f1f1f;
+}
+
+.LoginForm > .passwordValidation > .strength > .bar:hover {
+  transform: scale(120%) rotate(-4deg);
+  box-shadow: none;
+}
+
+.LoginForm > .passwordValidation > .strength > .bar-show {
+  box-shadow: none;
+}
+
+.LoginForm > .passwordValidation > .strength > .bar-show:hover {
+  box-shadow: 0px 0px 10px black;
+  z-index: 10000;
+}
+
+.LoginForm > .passwordValidation > .strength > .bar-1 {
+  background: linear-gradient(to right, red, orangered);
+  border-top-left-radius: 7.5px;
+  border-bottom-left-radius: 7.5px;
+}
+
+.LoginForm > .passwordValidation > .strength > .bar-2 {
+  background: linear-gradient(to right, orangered, yellow);
+}
+
+.LoginForm > .passwordValidation > .strength > .bar-2:hover {
+  transform: scale(120%) rotate(4deg);
+}
+
+.LoginForm > .passwordValidation > .strength > .bar-3 {
+  background: linear-gradient(to right, yellow, yellowgreen);
+}
+
+.LoginForm > .passwordValidation > .strength > .bar-4 {
+  background: linear-gradient(to right, yellowgreen, green);
+  border-top-right-radius: 7.5px;
+  border-bottom-right-radius: 7.5px;
+}
+
+.LoginForm > .passwordValidation > .strength > .bar-4:hover {
+  transform: scale(120%) rotate(4deg);
+}
+
+.LoginForm > .passwordValidation > ul {
+  list-style: none;
+}
+
+/* Show and hide the password */
+
+.LoginForm > .showHide {
+  background: none;
+  box-shadow: none;
+  position: relative;
+  font-size: 0.8rem;
+  top: -2rem;
+  left: 300px;
+  box-sizing: border-box;
+  width: 1rem;
+  cursor: help;
+}
+
+.password:hover .showHide {
+  transform: scale(110%) rotate(-2deg);
+}

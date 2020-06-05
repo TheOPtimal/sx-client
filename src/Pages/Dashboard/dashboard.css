@@ -1,0 +1,28 @@
+div.dashboard {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(37, 37, 37);
+    flex-wrap: wrap;
+}
+
+div.dashboard > input, div.dashboard > button, div.dashboard > div.check {
+    --border-radius: 5px;
+
+    appearance: none;
+    font-size: 16px;
+    padding: var(--border-radius);
+    border-radius: var(--border-radius);
+    margin: 5px;
+    border: none;
+    background-color: rgb(0, 162, 255);
+    box-shadow: 0px 0px 10px rgb(0, 162, 255);
+    transition: all 0.3s ease;
+    color: white;
+}
+
+div.dashboard > input:hover, div.dashboard > button:hover, div.dashboard > div.check:hover {
+    box-shadow: 0px 0px 20px rgb(0, 162, 255);
+    transform: scale(105%);
+}
