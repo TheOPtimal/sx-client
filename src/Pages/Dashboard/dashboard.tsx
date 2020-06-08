@@ -10,9 +10,11 @@ export default function Dashboard() {
   const intervalRef = useRef(null);
 
   function clickAlt(): void {
-    getAlt().then(alt => {
-      setCurAlt(alt)
-    }).catch(alert)
+    getAlt()
+      .then((alt) => {
+        setCurAlt(alt);
+      })
+      .catch(alert);
   }
 
   useEffect(() => {
@@ -43,23 +45,6 @@ export default function Dashboard() {
       </button>
       <input type="text" value={curAlt} />
       <button onClick={clickAlt}>Generate alt</button>
-      <div className="check">
-        <input
-          type="checkbox"
-          name="hi"
-          onChange={(e) => setAutoGen(e.target.checked)}
-        />
-        <label htmlFor="hi">Auto-generate</label>
-      </div>
-      <input
-        type="number"
-        placeholder="Auto-generate delay (seconds)"
-        value={intervalDelay}
-        onChange={(e) => {
-          if (Number.parseFloat(e.target.value) > 0)
-            setIntervalDelay(Number.parseFloat(e.target.value));
-        }}
-      />
     </div>
   );
 }
