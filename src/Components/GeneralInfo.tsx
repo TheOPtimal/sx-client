@@ -1,9 +1,9 @@
 import React from "react";
 import * as appInfo from "./nonReactive/appInfo";
 
-export default function BrowserInfo() {
+export default function BrowserInfo({ className }: { className?: string }) {
   return (
-    <div>
+    <div className={className}>
       <div>{navigator.appCodeName}</div>
       <div>
         {navigator.appName} {navigator.appVersion} on {navigator.platform} using{" "}

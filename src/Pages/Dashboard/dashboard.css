@@ -26,3 +26,11 @@ div.dashboard > input:hover, div.dashboard > button:hover, div.dashboard > div.c
     box-shadow: 0px 0px 20px rgb(0, 162, 255);
     transform: scale(105%);
 }
+
+.generalInfo {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    text-align: right;
+    color: white;
+}

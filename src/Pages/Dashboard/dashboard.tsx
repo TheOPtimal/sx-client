@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "./dashboard.css";
 import { getAlt } from "../../Components/nonReactive/getAlt";
 import useInterval from "../../Components/useInterval";
+import Info from "../../Components/GeneralInfo";
+import BrowserInfo from "../../Components/GeneralInfo";
 
 export default function Dashboard() {
   const [curAlt, setCurAlt] = useState("");
@@ -34,17 +36,20 @@ export default function Dashboard() {
   }, [autoGen, intervalDelay]);
 
   return (
-    <div className="dashboard">
-      <button
-        onClick={() => {
-          localStorage.removeItem("token");
-          window.open("/", "_self");
-        }}
-      >
-        Log Out
-      </button>
-      <input type="text" value={curAlt} />
-      <button onClick={clickAlt}>Generate alt</button>
-    </div>
+    <>
+      <div className="dashboard">
+        <button
+          onClick={() => {
+            localStorage.removeItem("token");
+            window.open("/", "_self");
+          }}
+        >
+          Log Out
+        </button>
+        <input type="text" value={curAlt} />
+        <button onClick={clickAlt}>Generate alt</button>
+      </div>
+      <BrowserInfo className="generalInfo" />
+    </>
   );
 }
