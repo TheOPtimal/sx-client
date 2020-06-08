@@ -12,7 +12,7 @@ export default function BrowserInfo({ className }: { className?: string }) {
       <div>{navigator.userAgent}</div>
       <div>{navigator.vendor}</div>
       <div>
-        {appInfo.appName} {appInfo.appVersion}
+        {appInfo.appName} {appInfo.appVersion} {appInfo.appBuild} Build
       </div>
     </div>
   );
