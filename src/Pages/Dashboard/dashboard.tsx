@@ -48,6 +48,9 @@ export default function Dashboard() {
         </button>
         <input type="text" value={curAlt} />
         <button onClick={clickAlt}>Generate alt</button>
+        <button onClick={() => navigator.clipboard.writeText(curAlt).then(() => alert("Copied!"))}>
+          Copy
+        </button>
       </div>
       <BrowserInfo className="generalInfo" />
     </>
