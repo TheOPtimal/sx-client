@@ -4,6 +4,13 @@
     left: 10px;
     border-radius: 10px;
     width: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 2px black;
+}
+
+.Logo:hover {
+  box-shadow: 2px 2px 5px black;
+  transform: scale(105%);
 }
 
 @media only screen and (max-width: 600px) {
