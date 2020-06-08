@@ -5,3 +5,9 @@
     border-radius: 10px;
     width: 100px;
 }
+
+@media only screen and (max-width: 600px) {
+  .Logo {
+    display: none;
+  }
+}
