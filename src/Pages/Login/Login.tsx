@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
-import { LogOn, SignUp } from "../../Components/auth";
+import { LogOn, SignUp } from "../../Components/nonReactive/auth";
 import { logonReturnSuccess, logonReturnFail } from "../../Components/types";
 
 function verifyCredentials(

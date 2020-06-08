@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./dashboard.css";
-import { getAlt } from "../../Components/getAlt";
+import { getAlt } from "../../Components/nonReactive/getAlt";
 import useInterval from "../../Components/useInterval";
 
 export default function Dashboard() {
