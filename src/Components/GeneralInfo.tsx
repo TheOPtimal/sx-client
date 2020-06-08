@@ -6,7 +6,7 @@ export default function BrowserInfo({ className }: { className?: string }) {
     <div className={className}>
       <div>{navigator.appCodeName}</div>
       <div>
-        {navigator.appName} {navigator.appVersion} on {navigator.platform} using{" "}
+        {navigator.appName} {navigator.appVersion} on {navigator.platform} using
         {navigator.product}
       </div>
       <div>{navigator.userAgent}</div>
