@@ -46,6 +46,7 @@ div.dashboard > div.check:hover {
   div.dashboard {
     flex-direction: column;
     justify-content: space-evenly;
+    gap: 0;
   }
   div.dashboard > * {
     width: 200px;
