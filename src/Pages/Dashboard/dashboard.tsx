@@ -38,21 +38,41 @@ export default function Dashboard() {
   return (
     <>
       <div className="dashboard">
-        <button
-          onClick={() => {
-            localStorage.removeItem("token");
-            window.open("/", "_self");
-          }}
-        >
-          Log Out
-        </button>
-        <input type="text" value={curAlt} />
+        <LogOut />
+        <AltBox curAlt={curAlt} />
         <button onClick={clickAlt}>Generate alt</button>
-        <button onClick={() => navigator.clipboard.writeText(curAlt).then(() => alert("Copied!"))}>
-          Copy
-        </button>
+        <CopyToClipboard curAlt={curAlt} />
       </div>
       <BrowserInfo className="generalInfo" />
     </>
   );
 }
+
+const AltBox = React.memo(function AltBox({ curAlt }: { curAlt: string }) {
+  return <input type="text" value={curAlt} />;
+});
+
+const CopyToClipboard = React.memo(function CopyToClipboard({ curAlt }: { curAlt: string }) {
+  return (
+    <button
+      onClick={() =>
+        navigator.clipboard.writeText(curAlt).then(() => alert("Copied!"))
+      }
+    >
+      Copy
+    </button>
+  );
+});
+
+const LogOut = React.memo(function LogOut() {
+  return (
+    <button
+      onClick={() => {
+        localStorage.removeItem("token");
+        window.open("/", "_self");
+      }}
+    >
+      Log Out
+    </button>
+  );
+});

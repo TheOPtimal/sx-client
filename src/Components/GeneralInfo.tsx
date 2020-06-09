@@ -1,7 +1,11 @@
 import React from "react";
 import * as appInfo from "./nonReactive/appInfo";
 
-export default function BrowserInfo({ className }: { className?: string }) {
+export default React.memo(function BrowserInfo({
+  className,
+}: {
+  className?: string;
+}) {
   return (
     <div className={className}>
       <div>{navigator.appCodeName}</div>
@@ -16,4 +20,4 @@ export default function BrowserInfo({ className }: { className?: string }) {
       </div>
     </div>
   );
-}
+});
