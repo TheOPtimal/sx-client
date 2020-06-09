@@ -32,9 +32,7 @@ export default React.memo(function Dashboard() {
       <div className="dashboard">
         <LogOut />
         <AltBox curAlt={curAlt} />
-        <button onClick={() => clickAlt(getAlt, setCurAlt)}>
-          Generate alt
-        </button>
+        <GenerateAltBtn setCurAlt={setCurAlt} />
         <CopyToClipboard curAlt={curAlt} />
       </div>
       <BrowserInfo className="generalInfo" />
@@ -74,3 +72,12 @@ const LogOut = React.memo(function LogOut() {
     </button>
   );
 });
+function GenerateAltBtn({
+  setCurAlt,
+}: {
+  setCurAlt: React.Dispatch<React.SetStateAction<string>>;
+}) {
+  return (
+    <button onClick={() => clickAlt(getAlt, setCurAlt)}>Generate alt</button>
+  );
+}
