@@ -5,7 +5,7 @@ div.dashboard {
   align-items: center;
   background-color: rgb(37, 37, 37);
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 15px;
 }
 
 div.dashboard > input,
