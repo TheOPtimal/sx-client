@@ -5,6 +5,7 @@ div.dashboard {
   align-items: center;
   background-color: rgb(37, 37, 37);
   flex-wrap: wrap;
+  gap: 5px;
 }
 
 div.dashboard > input,
@@ -16,7 +17,6 @@ div.dashboard > div.check {
   font-size: 16px;
   padding: var(--border-radius);
   border-radius: var(--border-radius);
-  margin: 5px;
   border: none;
   background-color: rgb(0, 162, 255);
   box-shadow: 0px 0px 10px rgb(0, 162, 255);
@@ -42,5 +42,9 @@ div.dashboard > div.check:hover {
 @media only screen and (max-width: 600px) {
   .generalInfo {
     display: none;
+  }
+  div.dashboard {
+      flex-direction: column;
+      gap: 25px;
   }
 }
