@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.scss";
 import Login from "./Pages/Login/Login";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/dashboard";
 import Blacklisted from "./Pages/Blacklisted/blacklisted";
 import Logo from "./Images/sxalts.gif";
-import "./Logo.css";
+import "./Logo.scss";
 
 ReactDOM.render(
   <React.StrictMode>

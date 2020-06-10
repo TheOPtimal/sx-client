@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./dashboard.css";
+import "./dashboard.scss";
 import { getAlt } from "../../Components/nonReactive/getAlt";
 import useInterval from "../../Components/useInterval";
 import Info from "../../Components/GeneralInfo";
 import BrowserInfo from "../../Components/GeneralInfo";
+import Clock from "../../Components/Clock";
 
 function clickAlt(
   genAlt: () => Promise<any>,
@@ -29,6 +30,7 @@ export default React.memo(function Dashboard() {
 
   return (
     <>
+      <Clock />
       <div className="dashboard">
         <LogOut />
         <AltBox curAlt={curAlt} />

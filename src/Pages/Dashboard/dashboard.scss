@@ -31,12 +31,26 @@ div.dashboard > div.check:hover {
   transform: scale(105%);
 }
 
-.generalInfo {
+div.generalInfo {
   position: absolute;
   bottom: 5px;
   right: 5px;
   text-align: right;
   color: white;
+}
+
+div.clock {
+  position: absolute;
+  top: 0;
+  color: black;
+  background-color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  padding: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  font-family: 'IBM Plex';
 }
 
 @media only screen and (max-width: 600px) {
