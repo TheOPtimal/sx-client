@@ -1,5 +1,5 @@
 import React from 'react'
-import './blacklisted.scss'
+import './blacklisted.css'
 
 export default function Blacklisted() {
     return <div className="blacklisted">You have been blacklisted.</div>
