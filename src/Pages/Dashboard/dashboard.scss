@@ -65,8 +65,8 @@ div.clock {
     flex-direction: column;
     justify-content: space-evenly;
     gap: 0;
-  }
-  div.dashboard > * {
-    width: 200px;
+    & > * {
+      width: 200px;
+    }
   }
 }
