@@ -8,8 +8,7 @@ div.dashboard {
   gap: 15px;
 
   input,
-  button,
-  div.check {
+  button {
     --border-radius: 5px;
 
     appearance: none;
@@ -21,12 +20,10 @@ div.dashboard {
     box-shadow: 0px 0px 10px rgb(0, 162, 255);
     transition: all 0.3s ease;
     color: white;
-  }
-  
-  input:hover,
-  button:hover {
-    box-shadow: 0px 0px 20px rgb(0, 162, 255);
-    transform: scale(105%);
+    &:hover {
+      box-shadow: 0px 0px 20px rgb(0, 162, 255);
+      transform: scale(105%);
+    }
   }
 }
 
@@ -49,7 +46,15 @@ div.clock {
   padding: 10px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
-  font-family: "IBM Plex";
+  font-family: "IBM Plex Mono", "Menlo", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", Courier, monospace;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 10px white;
+
+  &:hover {
+    box-shadow: 0px 0px 20px white;
+    transform: scale(110%) translateX(-45%);
+  }
 }
 
 @media only screen and (max-width: 600px) {
