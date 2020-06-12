@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Login.scss";
 import { LogOn, SignUp } from "../../Components/nonReactive/auth";
-import { logonReturnSuccess, logonReturnFail } from "../../Components/types";
 
 function verifyCredentials(
   username: string,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useInterval from "./useInterval";
+import useInterval from "./nonReactive/useInterval";
 
 export default React.memo(function Clock() {
   const [time, setTime] = useState(new Date());

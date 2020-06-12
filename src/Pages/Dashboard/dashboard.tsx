@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./dashboard.scss";
 import { getAlt } from "../../Components/nonReactive/getAlt";
-import useInterval from "../../Components/useInterval";
+import useInterval from "../../Components/nonReactive/useInterval";
 import Info from "../../Components/GeneralInfo";
 import BrowserInfo from "../../Components/GeneralInfo";
 import Clock from "../../Components/Clock";

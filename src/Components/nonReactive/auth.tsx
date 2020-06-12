@@ -1,4 +1,3 @@
-import { logonReturn, signUpReturn } from "../types";
 const axios = require("axios").default;
 
 export async function LogOn(username: string, password: string) {

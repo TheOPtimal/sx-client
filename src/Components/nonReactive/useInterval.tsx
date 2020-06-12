@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { callback } from "./types";
+import { callback } from "../types";
 
 export default function useInterval(callback: callback, delay: number) {
   const savedCallback = useRef(callback); // This is where we will store the callback

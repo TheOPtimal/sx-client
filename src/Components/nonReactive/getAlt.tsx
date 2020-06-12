@@ -1,4 +1,3 @@
-import { signUpReturn } from "../types";
 import axios from "axios";
 
 export async function getAlt() {
