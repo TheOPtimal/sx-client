@@ -19,8 +19,6 @@ function clickAlt(
 
 export default React.memo(function Dashboard() {
   const [curAlt, setCurAlt] = useState("");
-  const [intervalDelay, setIntervalDelay] = useState(2);
-  const intervalRef = useRef(null);
 
   useEffect(() => {
     if (!localStorage.getItem("token")) {
