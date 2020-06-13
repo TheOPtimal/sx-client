@@ -7,14 +7,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/dashboard";
 import Blacklisted from "./Pages/Blacklisted/blacklisted";
 import Logo from "./Images/sxalts.gif";
-import "./Logo.scss";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Route path="/">
-        <img className="Logo" src={Logo} alt="S-X alts logo" />
-      </Route>
       <Route exact path="/blacklisted">
         <Blacklisted />
       </Route>

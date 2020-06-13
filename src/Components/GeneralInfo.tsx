@@ -9,12 +9,12 @@ export default React.memo(function BrowserInfo({
   return (
     <div className={className}>
       <div>{navigator.appCodeName}</div>
-      <div>
+      {/* <div>
         {navigator.appName} {navigator.appVersion} on {navigator.platform} using
         {navigator.product}
-      </div>
+      </div> */}
       <div>{navigator.userAgent}</div>
-      <div>{navigator.vendor}</div>
+      {/* <div>{navigator.vendor}</div> */}
       <div>
         {appInfo.appName} {appInfo.appVersion} {appInfo.appBuild} build
       </div>

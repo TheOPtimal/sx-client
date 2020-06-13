@@ -1,10 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./dashboard.scss";
 import { getAlt } from "../../Components/nonReactive/getAlt";
-import useInterval from "../../Components/nonReactive/useInterval";
-import Info from "../../Components/GeneralInfo";
 import BrowserInfo from "../../Components/GeneralInfo";
-import Clock from "../../Components/Clock";
 
 function clickAlt(
   genAlt: () => Promise<any>,
@@ -19,6 +16,26 @@ function clickAlt(
 
 export default React.memo(function Dashboard() {
   const [curAlt, setCurAlt] = useState("");
+  const [gennedAltsNum, setGennedAltsNum] = useState<number>(
+    Number.parseInt(localStorage.getItem("gennedAlts")) || 0
+  );
+  const [accountHistory, setAccountHistory] = useState<string[]>(
+    JSON.parse(localStorage.getItem("accHistory")) ?? []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("accHistory", JSON.stringify(accountHistory));
+  }, [accountHistory]);
+
+  useEffect(() => {
+    localStorage.setItem("gennedAlts", JSON.stringify(gennedAltsNum));
+  }, [gennedAltsNum]);
+
+  // useEffect(() => {
+  //   if (curAlt !== "") {
+  //     setAccountHistory((oldArr) => [...oldArr, curAlt]);
+  //   }
+  // }, [curAlt]);
 
   useEffect(() => {
     if (!localStorage.getItem("token")) {
@@ -28,16 +45,29 @@ export default React.memo(function Dashboard() {
 
   return (
     <>
-      <Clock />
       <div className="dashboard">
         <LogOut />
         <AltBox curAlt={curAlt} />
-        <GenerateAltBtn setCurAlt={setCurAlt} />
+        <GenerateAltBtn
+          setCurAlt={setCurAlt}
+          setGennedAltsNum={setGennedAltsNum}
+          setAccountHistory={setAccountHistory}
+        />
         <CopyToClipboard curAlt={curAlt} />
       </div>
       <BrowserInfo className="generalInfo" />
+      <AltCounter genAltCount={gennedAltsNum} />
+      <AccountHistory />
     </>
   );
+});
+
+const AltCounter = React.memo(function AltCounter({
+  genAltCount,
+}: {
+  genAltCount: number;
+}) {
+  return <div className="altsNum">Generated Alts: {genAltCount}</div>;
 });
 
 const AltBox = React.memo(function AltBox({ curAlt }: { curAlt: string }) {
@@ -72,12 +102,32 @@ const LogOut = React.memo(function LogOut() {
     </button>
   );
 });
-function GenerateAltBtn({
+const GenerateAltBtn = React.memo(function GenerateAltBtn({
   setCurAlt,
+  setGennedAltsNum,
+  setAccountHistory,
 }: {
   setCurAlt: React.Dispatch<React.SetStateAction<string>>;
+  setGennedAltsNum: React.Dispatch<React.SetStateAction<number>>;
+  setAccountHistory: React.Dispatch<React.SetStateAction<string[]>>;
 }) {
   return (
-    <button onClick={() => clickAlt(getAlt, setCurAlt)}>Generate alt</button>
+    <button
+      onClick={() => {
+        clickAlt(getAlt, setCurAlt);
+        setGennedAltsNum((curNum) => curNum + 1);
+        setAccountHistory(oldArr => [...oldArr, ])
+      }}
+    >
+      Generate alt
+    </button>
   );
-}
+});
+
+const AccountHistory = React.memo(function AccountHistory() {
+  return (
+    <>
+      <button>Open Account History</button>
+    </>
+  );
+});
