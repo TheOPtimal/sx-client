@@ -49,7 +49,9 @@ div.altsNum {
   color: $color;
 }
 
-@supports (gap: 15px) {
+
+
+@supports not (gap: 15px) {
   div.dasboard > * {
     margin: 15px;
   }
