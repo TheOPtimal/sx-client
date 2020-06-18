@@ -56,6 +56,9 @@
     flex-direction: column;
     height: 100vh;
     max-width: 50px;
+    .flex-end {
+      margin-top: auto;
+    }
     &:hover {
       max-width: 100vw;
       li {
@@ -72,6 +75,9 @@
     flex-direction: row;
     bottom: 0;
     width: 100vw;
+    .flex-end {
+      margin-left: auto;
+    }
     span {
       display: none;
     }

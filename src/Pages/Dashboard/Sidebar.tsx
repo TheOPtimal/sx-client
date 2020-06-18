@@ -6,7 +6,7 @@ import SXLogo from "../../Images/SXaccounts.svg";
 import LogOutIcon from "../../Images/LogOut";
 
 export default function Sidebar({
-  tab,
+  // tab,
   setTab,
 }: {
   tab: "dashboard" | "history";
@@ -38,7 +38,7 @@ export default function Sidebar({
           localStorage.removeItem("token");
           window.open("/", "_self");
         }}
-        style={{ marginTop: "auto", marginLeft: "auto" }}
+        className="flex-end"
       >
         <LogOutIcon className="icon" />
         <span>Log Out</span>
