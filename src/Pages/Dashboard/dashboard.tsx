@@ -7,11 +7,13 @@ import AccountHistory from "./AccountHistory";
 
 function clickAlt(
   genAlt: () => Promise<any>,
-  setCurAlt: React.Dispatch<React.SetStateAction<string>>
+  setCurAlt: React.Dispatch<React.SetStateAction<string>>,
+  setAccountHistory: React.Dispatch<React.SetStateAction<string[]>>
 ): void {
   getAlt()
     .then((alt) => {
       setCurAlt(alt);
+      setAccountHistory((oldArr) => [...oldArr, alt]);
     })
     .catch(alert);
 }
@@ -22,13 +24,13 @@ export default React.memo(function Dashboard() {
     Number.parseInt(localStorage.getItem("gennedAlts")) || 0
   );
   const [tab, setTab] = useState<"dashboard" | "history">("dashboard");
-  // const [accountHistory, setAccountHistory] = useState<string[]>(
-  //   JSON.parse(localStorage.getItem("accHistory")) ?? []
-  // );
+  const [accountHistory, setAccountHistory] = useState<string[]>(
+    JSON.parse(localStorage.getItem("accHistory")) ?? []
+  );
 
-  // useEffect(() => {
-  //   localStorage.setItem("accHistory", JSON.stringify(accountHistory));
-  // }, [accountHistory]);
+  useEffect(() => {
+    localStorage.setItem("accHistory", JSON.stringify(accountHistory));
+  }, [accountHistory]);
 
   useEffect(() => {
     localStorage.setItem("gennedAlts", JSON.stringify(gennedAltsNum));
@@ -54,12 +56,12 @@ export default React.memo(function Dashboard() {
           <GenerateAltBtn
             setCurAlt={setCurAlt}
             setGennedAltsNum={setGennedAltsNum}
-            // setAccountHistory={setAccountHistory}
+            setAccountHistory={setAccountHistory}
           />
           <CopyToClipboard curAlt={curAlt} />
         </div>
       ) : (
-        <AccountHistory />
+        <AccountHistory accountHistory={accountHistory} setAccountHistory={setAccountHistory} />
       )}
       <BrowserInfo className="generalInfo" />
       <AltCounter genAltCount={gennedAltsNum} />
@@ -99,16 +101,16 @@ const CopyToClipboard = React.memo(function CopyToClipboard({
 const GenerateAltBtn = React.memo(function GenerateAltBtn({
   setCurAlt,
   setGennedAltsNum,
-}: // setAccountHistory,
-{
+  setAccountHistory,
+}: {
   setCurAlt: React.Dispatch<React.SetStateAction<string>>;
   setGennedAltsNum: React.Dispatch<React.SetStateAction<number>>;
-  // setAccountHistory: React.Dispatch<React.SetStateAction<string[]>>;
+  setAccountHistory: React.Dispatch<React.SetStateAction<string[]>>;
 }) {
   return (
     <button
       onClick={() => {
-        clickAlt(getAlt, setCurAlt);
+        clickAlt(getAlt, setCurAlt, setAccountHistory);
         setGennedAltsNum((curNum) => curNum + 1);
         // setAccountHistory(oldArr => [...oldArr, ])
       }}
