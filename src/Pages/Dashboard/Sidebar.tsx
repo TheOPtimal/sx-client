@@ -22,7 +22,6 @@ export default function Sidebar({
           style={{
             boxShadow: "0px 0px 5px black",
             borderRadius: "2px",
-            cursor: "default",
           }}
         />
         <span>S--X</span>
@@ -39,7 +38,7 @@ export default function Sidebar({
           localStorage.removeItem("token");
           window.open("/", "_self");
         }}
-        style={{ marginTop: "auto" }}
+        style={{ marginTop: "auto", marginLeft: "auto" }}
       >
         <LogOutIcon className="icon" />
         <span>Log Out</span>
