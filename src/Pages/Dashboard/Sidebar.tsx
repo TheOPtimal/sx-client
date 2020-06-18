@@ -1,9 +1,9 @@
 import React from "react";
 import HomeIcon from "@material-ui/icons/Home";
 import HistoryIcon from "@material-ui/icons/History";
-import LogOut from "../../Images/LogOut.svg";
 import "./Sidebar.scss";
 import SXLogo from "../../Images/SXaccounts.svg";
+import LogOutIcon from "../../Images/LogOut";
 
 export default function Sidebar({
   tab,
@@ -41,7 +41,7 @@ export default function Sidebar({
         }}
         style={{ marginTop: "auto" }}
       >
-        <img src={LogOut} alt="Log Out Icon" className="icon" />
+        <LogOutIcon className="icon" />
         <span>Log Out</span>
       </li>
     </ul>
