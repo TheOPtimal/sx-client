@@ -3,6 +3,7 @@ import "./dashboard.scss";
 import { getAlt } from "../../Components/nonReactive/getAlt";
 import BrowserInfo from "../../Components/GeneralInfo";
 import Sidebar from "./Sidebar";
+import AccountHistory from "./AccountHistory";
 
 function clickAlt(
   genAlt: () => Promise<any>,
@@ -20,7 +21,7 @@ export default React.memo(function Dashboard() {
   const [gennedAltsNum, setGennedAltsNum] = useState<number>(
     Number.parseInt(localStorage.getItem("gennedAlts")) || 0
   );
-  const [tab, setTab] = useState<"dashboard" | "history">("dashboard")
+  const [tab, setTab] = useState<"dashboard" | "history">("dashboard");
   // const [accountHistory, setAccountHistory] = useState<string[]>(
   //   JSON.parse(localStorage.getItem("accHistory")) ?? []
   // );
@@ -127,13 +128,5 @@ const GenerateAltBtn = React.memo(function GenerateAltBtn({
     >
       Generate alt
     </button>
-  );
-});
-
-const AccountHistory = React.memo(function AccountHistory() {
-  return (
-    <>
-      <button>Open Account History</button>
-    </>
   );
 });
