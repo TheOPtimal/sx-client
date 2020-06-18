@@ -52,16 +52,19 @@ export default React.memo(function Dashboard() {
     <>
       {tab === "dashboard" ? (
         <div className="dashboard">
-          <AltBox curAlt={curAlt} />
           <GenerateAltBtn
             setCurAlt={setCurAlt}
             setGennedAltsNum={setGennedAltsNum}
             setAccountHistory={setAccountHistory}
           />
+          <AltBox curAlt={curAlt} />
           <CopyToClipboard curAlt={curAlt} />
         </div>
       ) : (
-        <AccountHistory accountHistory={accountHistory} setAccountHistory={setAccountHistory} />
+        <AccountHistory
+          accountHistory={accountHistory}
+          setAccountHistory={setAccountHistory}
+        />
       )}
       <BrowserInfo className="generalInfo" />
       <AltCounter genAltCount={gennedAltsNum} />
