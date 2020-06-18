@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./dashboard.scss";
 import { getAlt } from "../../Components/nonReactive/getAlt";
 import BrowserInfo from "../../Components/GeneralInfo";
+import Sidebar from "./Sidebar";
 
 function clickAlt(
   genAlt: () => Promise<any>,
@@ -19,6 +20,7 @@ export default React.memo(function Dashboard() {
   const [gennedAltsNum, setGennedAltsNum] = useState<number>(
     Number.parseInt(localStorage.getItem("gennedAlts")) || 0
   );
+  const [tab, setTab] = useState<"dashboard" | "history">("dashboard")
   // const [accountHistory, setAccountHistory] = useState<string[]>(
   //   JSON.parse(localStorage.getItem("accHistory")) ?? []
   // );
@@ -45,19 +47,23 @@ export default React.memo(function Dashboard() {
 
   return (
     <>
-      <div className="dashboard">
-        <LogOut />
-        <AltBox curAlt={curAlt} />
-        <GenerateAltBtn
-          setCurAlt={setCurAlt}
-          setGennedAltsNum={setGennedAltsNum}
-          // setAccountHistory={setAccountHistory}
-        />
-        <CopyToClipboard curAlt={curAlt} />
-      </div>
+      {tab === "dashboard" ? (
+        <div className="dashboard">
+          <LogOut />
+          <AltBox curAlt={curAlt} />
+          <GenerateAltBtn
+            setCurAlt={setCurAlt}
+            setGennedAltsNum={setGennedAltsNum}
+            // setAccountHistory={setAccountHistory}
+          />
+          <CopyToClipboard curAlt={curAlt} />
+        </div>
+      ) : (
+        <AccountHistory />
+      )}
       <BrowserInfo className="generalInfo" />
       <AltCounter genAltCount={gennedAltsNum} />
-      <AccountHistory />
+      <Sidebar tab={tab} setTab={setTab} />
     </>
   );
 });
