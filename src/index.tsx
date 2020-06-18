@@ -6,7 +6,6 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/dashboard";
 import Blacklisted from "./Pages/Blacklisted/blacklisted";
-import Logo from "./Images/sxalts.gif";
 
 ReactDOM.render(
   <React.StrictMode>
