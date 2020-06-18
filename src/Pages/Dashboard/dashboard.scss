@@ -1,9 +1,5 @@
 @import "../../Components/Styles/dashui";
 
-$background: linear-gradient(to bottom right, rgb(0, 60, 75), rgb(0, 18, 77));
-$gap: 15px;
-$color: white;
-
 div.dashboard {
   min-height: 100vh;
   display: flex;

@@ -1,8 +1,11 @@
+@import "../../Components/Styles/dashui";
+
 .accountHistory {
-    background-color: rgb(21, 37, 87);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  background: $background;
+  color: $color;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

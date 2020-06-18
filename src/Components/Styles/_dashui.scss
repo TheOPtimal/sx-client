@@ -1,3 +1,7 @@
+$background: linear-gradient(to bottom right, rgb(0, 60, 75), rgb(0, 18, 77));
+$color: rgba(255, 255, 255, 0.8);
+$gap: 15px;
+
 @mixin dashui {
   input,
   button {

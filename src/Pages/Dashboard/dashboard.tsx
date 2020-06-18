@@ -50,7 +50,6 @@ export default React.memo(function Dashboard() {
     <>
       {tab === "dashboard" ? (
         <div className="dashboard">
-          <LogOut />
           <AltBox curAlt={curAlt} />
           <GenerateAltBtn
             setCurAlt={setCurAlt}
@@ -78,7 +77,7 @@ const AltCounter = React.memo(function AltCounter({
 });
 
 const AltBox = React.memo(function AltBox({ curAlt }: { curAlt: string }) {
-  return <input type="text" value={curAlt} />;
+  return <input type="text" value={curAlt} readOnly />;
 });
 
 const CopyToClipboard = React.memo(function CopyToClipboard({
@@ -97,18 +96,6 @@ const CopyToClipboard = React.memo(function CopyToClipboard({
   );
 });
 
-const LogOut = React.memo(function LogOut() {
-  return (
-    <button
-      onClick={() => {
-        localStorage.removeItem("token");
-        window.open("/", "_self");
-      }}
-    >
-      Log Out
-    </button>
-  );
-});
 const GenerateAltBtn = React.memo(function GenerateAltBtn({
   setCurAlt,
   setGennedAltsNum,
