@@ -10,12 +10,14 @@ function clickAlt(
   genAlt: () => Promise<any>,
   setCurAlt: React.Dispatch<React.SetStateAction<string>>,
   setAccountHistory: React.Dispatch<React.SetStateAction<string[]>>,
-  setTooltipMessage: React.Dispatch<React.SetStateAction<string>>
+  setTooltipMessage: React.Dispatch<React.SetStateAction<string>>,
+  setGennedAltsNum: React.Dispatch<React.SetStateAction<number>>
 ): void {
   getAlt()
     .then((alt) => {
       setCurAlt(alt);
       setAccountHistory((oldArr) => [...oldArr, alt]);
+      setGennedAltsNum((curNum) => curNum + 1);
     })
     .catch(setTooltipMessage);
 }
@@ -140,11 +142,15 @@ const GenerateAltBtn = React.memo(function GenerateAltBtn({
 }) {
   return (
     <button
-      onClick={() => {
-        clickAlt(getAlt, setCurAlt, setAccountHistory, setTooltipMessage);
-        setGennedAltsNum((curNum) => curNum + 1);
-        // setAccountHistory(oldArr => [...oldArr, ])
-      }}
+      onClick={() =>
+        clickAlt(
+          getAlt,
+          setCurAlt,
+          setAccountHistory,
+          setTooltipMessage,
+          setGennedAltsNum
+        )
+      }
     >
       Generate alt
     </button>
