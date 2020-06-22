@@ -15,7 +15,9 @@ export default React.memo(function AccountHistory({
           <Account account={acc} key={i} />
         ))}
       </div>
-      <button className="clear" onClick={() => setAccountHistory([])}>Clear</button>
+      <button className="clear" onClick={() => setAccountHistory([])}>
+        Clear
+      </button>
     </div>
   );
 });
