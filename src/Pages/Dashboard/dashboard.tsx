@@ -10,7 +10,7 @@ function clickAlt(
   genAlt: () => Promise<any>,
   setCurAlt: React.Dispatch<React.SetStateAction<string>>,
   setAccountHistory: React.Dispatch<React.SetStateAction<string[]>>,
-  setTooltipMessage: React.Dispatch<React.SetStateAction<string>>,
+  setTooltipMessage: (newMessage: string) => void,
   setGennedAltsNum: React.Dispatch<React.SetStateAction<number>>
 ): void {
   getAlt()
@@ -114,7 +114,7 @@ const CopyToClipboard = React.memo(function CopyToClipboard({
   setTooltipMessage,
 }: {
   curAlt: string;
-  setTooltipMessage: React.Dispatch<React.SetStateAction<string>>;
+  setTooltipMessage: (newMessage: string) => void;
 }) {
   return (
     <button
@@ -138,7 +138,7 @@ const GenerateAltBtn = React.memo(function GenerateAltBtn({
   setCurAlt: React.Dispatch<React.SetStateAction<string>>;
   setGennedAltsNum: React.Dispatch<React.SetStateAction<number>>;
   setAccountHistory: React.Dispatch<React.SetStateAction<string[]>>;
-  setTooltipMessage: React.Dispatch<React.SetStateAction<string>>;
+  setTooltipMessage: (newMessage: any) => void;
 }) {
   return (
     <button

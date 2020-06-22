@@ -13,8 +13,8 @@ export async function LogOn(username: string, password: string) {
     );
     req = hi.data.token;
   } catch (err) {
-    console.log(err.response);
-    throw err.response.data.message;
+    const error = err.response.data.message || "Server is down.";
+    throw error;
   }
 
   return req;
