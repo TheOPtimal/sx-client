@@ -1,0 +1,24 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+
+# Line endings
+
+end_of_line = lf
+insert_final_newline = true
+
+# Indentations
+
+indent_style = tab
+indent_size = 2
+
+# Character set
+
+charset = utf-8
+
+# Whitespaces
+
+trim_trailing_whitescape = true
