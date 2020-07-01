@@ -24,7 +24,6 @@ export default function Login() {
   const [loginType, setLoginType] = useState<"login" | "signup">("login");
   const [passStrongEnough, setPassStrongEnough] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [formName, setFormName] = useState<"Log In" | "Sign Up">("Log In");
 
   useEffect(() => {
     if (localStorage.getItem("token")) window.open("/dashboard", "_self");
