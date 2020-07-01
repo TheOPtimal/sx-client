@@ -1,58 +1,63 @@
 $background: linear-gradient(to bottom right, rgb(0, 60, 75), rgb(0, 18, 77));
-$color: rgba(255, 255, 255, 0.8);
+$color: white;
 $gap: 15px;
 
 @mixin dashui {
-  input,
-  button {
-    --bg-color: rgb(0, 153, 255);
-    --bg-second-color: rgb(78, 190, 255);
-    --bg-invalid-color: red;
-    --bg-valid-color: green;
-    --bg-color-gradient: linear-gradient(
-      to bottom right,
-      var(--bg-color),
-      var(--bg-second-color),
-      var(--bg-color)
-    );
-    --main-color: rgba(255, 255, 255, 0.8);
+	input,
+	button {
+		--bg-color: rgb(0, 153, 255);
+		--bg-second-color: rgb(78, 190, 255);
+		--bg-invalid-color: red;
+		--bg-valid-color: green;
+		--bg-color-gradient: linear-gradient(
+			to bottom right,
+			var(--bg-color),
+			var(--bg-second-color),
+			var(--bg-color)
+		);
+		--main-color: rgba(255, 255, 255, 0.8);
 
-    margin: 5px;
-    background: var(--bg-color-gradient);
-    border: none;
-    box-shadow: 0px 0px 5px var(--bg-color);
-    border-radius: 7.5px;
-    padding: 5px;
-    transition: all 0.2s cubic-bezier(0.01, 0.84, 0.74, 1.01);
-    background-position: top left;
-    background-size: 330px 150px;
-    font-size: 20px;
-    color: var(--main-color);
+		margin: 5px;
+		background: var(--bg-color-gradient);
+		border: none;
+		box-shadow: 0px 0px 5px var(--bg-color);
+		border-radius: 7.5px;
+		padding: 5px;
+		transition: all 0.2s cubic-bezier(0.01, 0.84, 0.74, 1.01);
+		background-position: top left;
+		background-size: 330px 150px;
+		font-size: 20px;
+		color: var(--main-color);
 
-    &:hover,
-    &:focus {
-      background-position: left;
-      box-shadow: 0px 0px 10px var(--bg-second-color);
-      transform: scale(105%);
-    }
+		&:hover,
+		&:focus {
+			background-position: left;
+			box-shadow: 0px 0px 10px var(--bg-second-color);
+			transform: scale(105%);
+		}
 
-    &:hover {
-      transform: scale(110%) rotate(-2deg);
-      filter: brightness(110%);
-    }
+		&:hover {
+			transform: scale(110%) rotate(-2deg);
+			filter: brightness(110%);
+		}
 
-    &:active {
-      transform: scale(115%) rotate(-4deg);
-      filter: brightness(150%);
-      color: rgba(0, 0, 0, 0.733);
-      box-shadow: 0px 0px 10px black;
-    }
-  }
+		&:active {
+			transform: scale(115%) rotate(-4deg);
+			filter: brightness(150%);
+			color: rgba(0, 0, 0, 0.733);
+			box-shadow: 0px 0px 10px black;
+		}
+
+		&::placeholder {
+      color: white;
+      opacity: 0.5;
+		}
+	}
 }
 
 @mixin glow($color) {
-  box-shadow: 0px 0px 5px $color;
-  &:hover {
-    box-shadow: 0px 0px 10px $color;
-  }
+	box-shadow: 0px 0px 5px $color;
+	&:hover {
+		box-shadow: 0px 0px 10px $color;
+	}
 }
