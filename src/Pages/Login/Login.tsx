@@ -83,14 +83,12 @@ export default function Login() {
         />
         <button
           type="submit"
-          onMouseEnter={() => setFormName("Log In")}
           onClick={() => setLoginType("login")}
         >
           Log in
         </button>
         <button
           type="submit"
-          onMouseEnter={() => setFormName("Sign Up")}
           onClick={() => setLoginType("signup")}
         >
           Sign up
