@@ -87,6 +87,7 @@ export default React.memo(function Dashboard() {
         <AccountHistory
           accountHistory={accountHistory}
           setAccountHistory={setAccountHistory}
+          setTooltipMessage={secondarySetTooltipMessage}
         />
       )}
       <BrowserInfo className="generalInfo" />
