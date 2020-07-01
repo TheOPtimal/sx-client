@@ -41,6 +41,7 @@ export default function Login() {
           if (loginType === "login") {
             LogOn(username, password).then((token) => {
               localStorage.setItem('token', token)
+              window.open("/dashboard", "_self");
             }).catch(err => {
               alert(err)
             })
