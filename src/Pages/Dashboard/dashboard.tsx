@@ -71,17 +71,27 @@ export default React.memo(function Dashboard() {
 		<>
 			{tab === "dashboard" ? (
 				<div className="dashboard">
-					<GenerateAltBtn
-						setCurAlt={setCurAlt}
-						setGennedAltsNum={setGennedAltsNum}
-						setAccountHistory={setAccountHistory}
-						setTooltipMessage={secondarySetTooltipMessage}
-					/>
-					<AltBox curAlt={curAlt} />
-					<CopyToClipboard
-						curAlt={curAlt}
-						setTooltipMessage={secondarySetTooltipMessage}
-					/>
+					<div className="dashboardContainer">
+						<Card name="Generate an alt" mode="column">
+							<GenerateAltBtn
+								setCurAlt={setCurAlt}
+								setGennedAltsNum={setGennedAltsNum}
+								setAccountHistory={setAccountHistory}
+								setTooltipMessage={secondarySetTooltipMessage}
+							/>
+							<AltBox curAlt={curAlt} />
+							<CopyToClipboard
+								curAlt={curAlt}
+								setTooltipMessage={secondarySetTooltipMessage}
+							/>
+						</Card>
+						<Card name="Alt info" mode="row">
+							Coming soon
+						</Card>
+						<Card name="Generated alts" mode="row">
+							<AltCounter genAltCount={gennedAltsNum} />
+						</Card>
+					</div>
 				</div>
 			) : (
 				<AccountHistory
@@ -91,10 +101,26 @@ export default React.memo(function Dashboard() {
 				/>
 			)}
 			<BrowserInfo className="generalInfo" />
-			<AltCounter genAltCount={gennedAltsNum} />
 			<Sidebar tab={tab} setTab={setTab} />
 			<Tooltip message={tooltipMessage} active={tooltipActive} />
 		</>
+	);
+});
+
+const Card = React.memo(function Card({
+	children,
+	name,
+	mode,
+}: {
+	children: React.ReactNode;
+	name: string;
+	mode: "row" | "column";
+}) {
+	return (
+		<div className="card">
+			<h1>{name}</h1>
+			<div className={`content-container ${mode}`}>{children}</div>
+		</div>
 	);
 });
 

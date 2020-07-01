@@ -1,4 +1,5 @@
-@import "../../Components/Styles/dashui";
+@import "../../Components/Styles/DashUI/variables";
+@import "../../Components/Styles/DashUI/mixins/dashuimixin";
 
 $background: linear-gradient(to bottom right, rgb(0, 60, 75), rgb(0, 18, 77));
 $background-other: linear-gradient(

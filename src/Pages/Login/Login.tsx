@@ -59,39 +59,84 @@ export default function Login() {
 					}
 				}}
 			>
-				<h1>{loginType === "login" ? "Log In" : "Sign Up"}</h1>
-				<input
-					type="text"
-					placeholder="Discord Username"
-					value={username}
-					onChange={(event) => setUsername(event.target.value)}
+				<LoginTitle loginType={loginType} />
+				<UsernameBox setUsername={setUsername} username={username} />
+				<PasswordBox
+					setPassword={setPassword}
+					password={password}
+					showPassword={showPassword}
 				/>
-				<input
-					type={showPassword ? "text" : "password"}
-					placeholder="Password"
-					value={password}
-					onChange={(event) => setPassword(event.target.value)}
-					className="password"
+				<ShowPass
+					setShowPassword={setShowPassword}
+					showPassword={showPassword}
 				/>
-				<span
-					onMouseEnter={() => setShowPassword(true)}
-					onMouseLeave={() => setShowPassword(false)}
-					className="showHide"
-				>
-					{showPassword ? "👁" : "🙈"}
-				</span>
 				<PasswordStrength
 					password={password}
 					setPassStrongEnough={setPassStrongEnough}
 				/>
-				<button type="submit" onClick={() => setLoginType("login")}>
-					Log in
-				</button>
-				<button type="submit" onClick={() => setLoginType("signup")}>
-					Sign up
-				</button>
+				<LoginButton setLoginType={setLoginType} />
+				<SignupButton setLoginType={setLoginType} />
 			</form>
 		</div>
+	);
+}
+
+function LoginTitle({ loginType }: { loginType: string }) {
+	return <h1>{loginType === "login" ? "Log In" : "Sign Up"}</h1>;
+}
+
+function UsernameBox({
+	username,
+	setUsername,
+}: {
+	username: string;
+	setUsername: React.Dispatch<React.SetStateAction<string>>;
+}) {
+	return (
+		<input
+			type="text"
+			placeholder="Discord Username"
+			value={username}
+			onChange={(event) => setUsername(event.target.value)}
+		/>
+	);
+}
+
+function PasswordBox({
+	showPassword,
+	password,
+	setPassword,
+}: {
+	showPassword: boolean;
+	password: string;
+	setPassword: React.Dispatch<React.SetStateAction<string>>;
+}) {
+	return (
+		<input
+			type={showPassword ? "text" : "password"}
+			placeholder="Password"
+			value={password}
+			onChange={(event) => setPassword(event.target.value)}
+			className="password"
+		/>
+	);
+}
+
+function ShowPass({
+	setShowPassword,
+	showPassword,
+}: {
+	setShowPassword: React.Dispatch<React.SetStateAction<boolean>>;
+	showPassword: boolean;
+}) {
+	return (
+		<span
+			onMouseEnter={() => setShowPassword(true)}
+			onMouseLeave={() => setShowPassword(false)}
+			className="showHide"
+		>
+			{showPassword ? "👁" : "🙈"}
+		</span>
 	);
 }
 
@@ -135,3 +180,27 @@ function PasswordStrength({
 		</div>
 	);
 }
+
+const LoginButton = React.memo(function LoginButton({
+	setLoginType,
+}: {
+	setLoginType: React.Dispatch<React.SetStateAction<"login" | "signup">>;
+}) {
+	return (
+		<button type="submit" onClick={() => setLoginType("login")}>
+			Log in
+		</button>
+	);
+});
+
+const SignupButton = React.memo(function SignupButton({
+	setLoginType,
+}: {
+	setLoginType: React.Dispatch<React.SetStateAction<"login" | "signup">>;
+}) {
+	return (
+		<button type="submit" onClick={() => setLoginType("signup")}>
+			Sign up
+		</button>
+	);
+});
