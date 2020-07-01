@@ -1,15 +1,23 @@
-@import "../../Components/Styles/dashui";
+@import "../../Components/Styles/DashUI/mixins/dashuimixin";
+@import "../../Components/Styles/DashUI/mixins/cardmixin";
+@import "../../Components/Styles/DashUI/variables";
 
 div.dashboard {
-	min-height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	margin-left: 50px;
+	padding: 10px;
+	min-height: calc(100vh - 20px);
+	max-width: calc(100vw - 50px);
 	background-image: $background;
-	flex-wrap: wrap;
-	gap: $gap;
+
+	.dashboardContainer {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $gap;
+		margin-left: 10px;
+	}
 
 	@include dashui;
+	@include card;
 }
 
 div.generalInfo {
@@ -17,13 +25,6 @@ div.generalInfo {
 	bottom: 5px;
 	right: 5px;
 	text-align: right;
-	color: $color;
-}
-
-div.altsNum {
-	position: absolute;
-	top: 0;
-	right: 0;
 	color: $color;
 }
 
