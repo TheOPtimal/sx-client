@@ -2,118 +2,118 @@
 
 $background: linear-gradient(to bottom right, rgb(0, 60, 75), rgb(0, 18, 77));
 $background-other: linear-gradient(
-  to top left,
-  rgb(0, 95, 119),
-  rgb(0, 41, 95)
+	to top left,
+	rgb(0, 95, 119),
+	rgb(0, 41, 95)
 );
 
 .Login {
-  min-width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: $background;
-  color: white;
-  .LoginForm {
-    @include dashui;
-    
-    --h1-color: rgb(230, 230, 230);
-    --h1-color-transitioned: white;
+	min-width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: $background;
+	color: white;
+	.LoginForm {
+		@include dashui;
 
-    --bg-color: none;
-    --bg-color-transitioned: $background-other;
+		--h1-color: rgb(230, 230, 230);
+		--h1-color-transitioned: white;
 
-    display: flex;
-    flex-direction: column;
-    transition: all 0.5s ease;
-    padding: 15px;
-    background: var(--bg-color);
+		--bg-color: none;
+		--bg-color-transitioned: $background-other;
 
-    &:focus-within > h1,
-    h1:active {
-      color: var(--h1-color-transitioned);
-      margin-left: 190px;
-      top: 0px;
-      min-height: 75px;
-    }
+		display: flex;
+		flex-direction: column;
+		transition: all 0.5s ease;
+		padding: 15px;
+		background: var(--bg-color);
 
-    &:focus-within {
-      padding: 15px;
-      transform: scale(110%);
-      box-shadow: 0px 0px 15px black;
-      background: $background-other;
-    }
+		&:focus-within > h1,
+		h1:active {
+			color: var(--h1-color-transitioned);
+			margin-left: 190px;
+			top: 0px;
+			min-height: 75px;
+		}
 
-    h1 {
-      font-weight: 500;
-      color: var(--h1-color);
-      transition: all 0.5s ease;
-      top: -20px;
-      position: relative;
-      min-height: 50px;
-    }
-    .passwordValidation {
-      .strength {
-        display: flex;
-        height: 20px;
-        width: 100%;
-        margin-top: 10px;
-        .bar {
-          margin-right: 5px;
-          height: 100%;
-          width: 25%;
-          transition: all 0.2s cubic-bezier(0.01, 0.84, 0.74, 1.01);
-          box-shadow: inset 0px 20px #1f1f1f;
-          &:hover {
-            transform: scale(120%) rotate(-4deg);
-            box-shadow: none;
-          }
-        }
-        .bar-show {
-          box-shadow: none;
-          &:hover {
-            box-shadow: 0px 0px 10px black;
-            z-index: 10000;
-          }
-        }
-        .bar-1 {
-          background: linear-gradient(to right, red, orangered);
-          border-top-left-radius: 7.5px;
-          border-bottom-left-radius: 7.5px;
-        }
-        .bar-2 {
-          background: linear-gradient(to right, orangered, yellow);
-          &:hover {
-            transform: scale(120%) rotate(4deg);
-          }
-        }
-        .bar-3 {
-          background: linear-gradient(to right, yellow, yellowgreen);
-        }
-        .bar-4 {
-          background: linear-gradient(to right, yellowgreen, green);
-          border-top-right-radius: 7.5px;
-          border-bottom-right-radius: 7.5px;
-          &:hover {
-            transform: scale(120%) rotate(4deg);
-          }
-        }
-      }
-      ul {
-        list-style: none;
-      }
-    }
-    .showHide {
-      background: none;
-      box-shadow: none;
-      position: relative;
-      font-size: 0.8rem;
-      top: -2rem;
-      left: 300px;
-      box-sizing: border-box;
-      width: 1rem;
-      cursor: help;
-    }
-  }
+		&:focus-within {
+			padding: 15px;
+			transform: scale(110%);
+			box-shadow: 0px 0px 15px black;
+			background: $background-other;
+		}
+
+		h1 {
+			font-weight: 500;
+			color: var(--h1-color);
+			transition: all 0.5s ease;
+			top: -20px;
+			position: relative;
+			min-height: 50px;
+		}
+		.passwordValidation {
+			.strength {
+				display: flex;
+				height: 20px;
+				width: 100%;
+				margin-top: 10px;
+				.bar {
+					margin-right: 5px;
+					height: 100%;
+					width: 25%;
+					transition: all 0.2s cubic-bezier(0.01, 0.84, 0.74, 1.01);
+					box-shadow: inset 0px 20px #1f1f1f;
+					&:hover {
+						transform: scale(120%) rotate(-4deg);
+						box-shadow: none;
+					}
+				}
+				.bar-show {
+					box-shadow: none;
+					&:hover {
+						box-shadow: 0px 0px 10px black;
+						z-index: 10000;
+					}
+				}
+				.bar-1 {
+					background: linear-gradient(to right, red, orangered);
+					border-top-left-radius: 7.5px;
+					border-bottom-left-radius: 7.5px;
+				}
+				.bar-2 {
+					background: linear-gradient(to right, orangered, yellow);
+					&:hover {
+						transform: scale(120%) rotate(4deg);
+					}
+				}
+				.bar-3 {
+					background: linear-gradient(to right, yellow, yellowgreen);
+				}
+				.bar-4 {
+					background: linear-gradient(to right, yellowgreen, green);
+					border-top-right-radius: 7.5px;
+					border-bottom-right-radius: 7.5px;
+					&:hover {
+						transform: scale(120%) rotate(4deg);
+					}
+				}
+			}
+			ul {
+				list-style: none;
+			}
+		}
+		.showHide {
+			background: none;
+			box-shadow: none;
+			position: relative;
+			font-size: 0.8rem;
+			top: -2rem;
+			left: 300px;
+			box-sizing: border-box;
+			width: 1rem;
+			cursor: help;
+		}
+	}
 }

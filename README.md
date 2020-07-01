@@ -3,7 +3,7 @@
 The front-end source code for the S-X Alt generator.
 
 To actually self-host this, you will also need to self-host the server too, then
-make the server's URL the "server" environment variable. 
+make the server's URL the "server" environment variable.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

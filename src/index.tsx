@@ -8,20 +8,20 @@ import Dashboard from "./Pages/Dashboard/dashboard";
 import Blacklisted from "./Pages/Blacklisted/blacklisted";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Route exact path="/blacklisted">
-        <Blacklisted />
-      </Route>
-      <Route exact path="/dashboard">
-        <Dashboard />
-      </Route>
-      <Route exact path="/">
-        <Login />
-      </Route>
-    </Router>
-  </React.StrictMode>,
-  document.getElementById("root")
+	<React.StrictMode>
+		<Router>
+			<Route exact path="/blacklisted">
+				<Blacklisted />
+			</Route>
+			<Route exact path="/dashboard">
+				<Dashboard />
+			</Route>
+			<Route exact path="/">
+				<Login />
+			</Route>
+		</Router>
+	</React.StrictMode>,
+	document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

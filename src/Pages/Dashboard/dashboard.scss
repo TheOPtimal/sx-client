@@ -1,54 +1,54 @@
 @import "../../Components/Styles/dashui";
 
 div.dashboard {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: $background;
-  flex-wrap: wrap;
-  gap: $gap;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: $background;
+	flex-wrap: wrap;
+	gap: $gap;
 
-  @include dashui;
+	@include dashui;
 }
 
 div.generalInfo {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  text-align: right;
-  color: $color;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	text-align: right;
+	color: $color;
 }
 
 div.altsNum {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: $color;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: $color;
 }
 
 @supports not (gap: 15px) {
-  div.dasboard > * {
-    margin: 15px;
-  }
+	div.dasboard > * {
+		margin: 15px;
+	}
 }
 
 @media only screen and (max-width: 600px) {
-  .generalInfo {
-    display: none;
-  }
-  div.dashboard {
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 0;
-    & > * {
-      width: 200px;
-      margin: 0;
-      text-align: left;
-    }
-  }
-  div.altsNum {
-    top: 10px;
-    right: 10px;
-  }
+	.generalInfo {
+		display: none;
+	}
+	div.dashboard {
+		flex-direction: column;
+		justify-content: space-evenly;
+		gap: 0;
+		& > * {
+			width: 200px;
+			margin: 0;
+			text-align: left;
+		}
+	}
+	div.altsNum {
+		top: 10px;
+		right: 10px;
+	}
 }
