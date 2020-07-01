@@ -57,7 +57,7 @@ export default function Login() {
           }
         }}
       >
-        <h1>{formName}</h1>
+        <h1>{loginType === "login" ? "Log In" : "Sign Up"}</h1>
         <input
           type="text"
           placeholder="Discord Username"
