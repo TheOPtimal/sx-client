@@ -3,10 +3,6 @@
 @import "../../Components/Styles/DashUI/variables";
 
 div.dashboard {
-	margin-left: 50px;
-	padding: 10px;
-	min-height: calc(100vh - 20px);
-	max-width: calc(100vw - 50px);
 	background-image: $background;
 
 	.dashboardContainer {
@@ -29,8 +25,17 @@ div.generalInfo {
 }
 
 @supports not (gap: 15px) {
-	div.dasboard > * {
+	div.dashboard > * {
 		margin: 15px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	div.dashboard {
+		margin-left: 50px;
+		padding: 10px;
+		min-height: calc(100vh - 20px);
+		min-width: calc(100vw - 100px);
 	}
 }
 
@@ -39,9 +44,14 @@ div.generalInfo {
 		display: none;
 	}
 	div.dashboard {
-		flex-direction: column;
-		justify-content: space-evenly;
-		gap: 0;
+		min-width: 100vw;
+		min-height: calc(100vh - 50px);
+		.dashboardContainer {
+			flex-direction: column;
+			justify-content: space-evenly;
+			padding: 5px;
+			width: calc(100% - 30px);
+		}
 		& > * {
 			width: 200px;
 			margin: 0;
