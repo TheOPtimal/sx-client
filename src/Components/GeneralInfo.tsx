@@ -8,7 +8,7 @@ export default React.memo(function BrowserInfo({
 }) {
 	return (
 		<div className={className}>
-			<div>{navigator.appCodeName}</div>
+			{/* <div>{navigator.appCodeName}</div> */}
 			{/* <div>
         {navigator.appName} {navigator.appVersion} on {navigator.platform} using
         {navigator.product}
