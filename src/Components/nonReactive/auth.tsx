@@ -1,19 +1,18 @@
 const axios = require("axios").default;
+const serverURL = process.env.REACT_APP_SERVER_URL;
 
 export async function LogOn(username: string, password: string) {
 	let req: any;
 
 	try {
-		const hi = await axios.post(
-			"https://sx-alts-server.herokuapp.com/api/login",
-			{
-				username,
-				password,
-			}
-		);
+		const hi = await axios.post(`${serverURL}/api/login`, {
+			username,
+			password,
+		});
 		req = hi.data.token;
 	} catch (err) {
 		const error = err.response.data.message || "Server is down.";
+		console.debug(serverURL)
 		throw error;
 	}
 
@@ -22,7 +21,7 @@ export async function LogOn(username: string, password: string) {
 
 export async function SignUp(username: string, password: string) {
 	try {
-		await axios.post("https://sx-alts-server.herokuapp.com/api/signup", {
+		await axios.post(`${serverURL}/api/signup`, {
 			username,
 			password,
 		});
