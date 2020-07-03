@@ -1,11 +1,13 @@
 import axios from "axios";
 
+const serverURL = process.env.REACT_APP_SERVER_URL;
+
 export async function getAlt() {
 	const token = localStorage.getItem("token");
 	let req: any;
 
 	try {
-		const hi = await axios.get("https://sx-alts-server.herokuapp.com/api/alt", {
+		const hi = await axios.get(`${serverURL}/api/alt`, {
 			headers: {
 				token: token,
 			},
