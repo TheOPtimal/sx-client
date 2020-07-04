@@ -133,7 +133,12 @@ const AltCounter = React.memo(function AltCounter({
 });
 
 const AltBox = React.memo(function AltBox({ curAlt }: { curAlt: string }) {
-	return <input type="text" value={curAlt} readOnly />;
+	return (
+		<>
+			<label htmlFor="altBox">Alt</label>
+			<input type="text" name="altBox" value={curAlt} readOnly />
+		</>
+	);
 });
 
 const CopyToClipboard = React.memo(function CopyToClipboard({

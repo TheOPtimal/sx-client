@@ -17,6 +17,10 @@ code {
 		monospace;
 }
 
+label {
+	display: none;
+}
+
 /* width */
 ::-webkit-scrollbar {
 	width: 4px;
