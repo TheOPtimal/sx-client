@@ -93,12 +93,16 @@ function UsernameBox({
 	setUsername: React.Dispatch<React.SetStateAction<string>>;
 }) {
 	return (
-		<input
-			type="text"
-			placeholder="Discord Username"
-			value={username}
-			onChange={(event) => setUsername(event.target.value)}
-		/>
+		<>
+			<label htmlFor="usernameBox">Username</label>
+			<input
+				type="text"
+				name="usernameBox"
+				placeholder="Discord Username"
+				value={username}
+				onChange={(event) => setUsername(event.target.value)}
+			/>
+		</>
 	);
 }
 
@@ -112,13 +116,17 @@ function PasswordBox({
 	setPassword: React.Dispatch<React.SetStateAction<string>>;
 }) {
 	return (
-		<input
-			type={showPassword ? "text" : "password"}
-			placeholder="Password"
-			value={password}
-			onChange={(event) => setPassword(event.target.value)}
-			className="password"
-		/>
+		<>
+			<label htmlFor="password">Password</label>
+			<input
+				type={showPassword ? "text" : "password"}
+				name="password"
+				placeholder="Password"
+				value={password}
+				onChange={(event) => setPassword(event.target.value)}
+				className="password"
+			/>
+		</>
 	);
 }
 
